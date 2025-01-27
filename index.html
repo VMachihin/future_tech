@@ -1,16 +1,18 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<link rel="stylesheet" href="./styles/main.css" />
-		<title>Future Tech</title>
+		<title>Future Tech | Home</title>
+		<script type="module" src="./scripts/main.js" defer></script>
 	</head>
 	<body>
 		<header class="header" data-js-header>
 			<div class="header__promo">
 				<div class="header__promo-inner container">
-					<a href="" class="header__promo-link"
+					<a href="" class="header__promo-link" aria-label="Blogs and Resources" title="Blogs and Resources"
 						><span class="icon icon--yellow-arrow"
 							>Subscribe to our Newsletter For New & latest Blogs and Resources</span
 						></a
@@ -19,7 +21,7 @@
 			</div>
 			<div class="header__body">
 				<div class="header__body-inner container">
-					<a href="#" aria-label="Home" title="Home" class="header__logo logo">
+					<a href="#" aria-label="Future Tech" title="Future Tech" class="header__logo logo">
 						<img
 							src="./assets/images/icon/logo.svg"
 							alt=""
@@ -32,20 +34,20 @@
 						<nav class="header__menu">
 							<ul class="header__menu-list">
 								<li class="header__menu-item">
-									<a href="#" class="header__menu-link is-active">Home</a>
+									<a href="#" class="header__menu-link is-active" aria-label="Home" title="Home">Home</a>
 								</li>
 								<li class="header__menu-item">
-									<a href="#" class="header__menu-link">News</a>
+									<a href="#" class="header__menu-link" aria-label="News" title="News">News</a>
 								</li>
 								<li class="header__menu-item">
-									<a href="#" class="header__menu-link">Podcasts</a>
+									<a href="#" class="header__menu-link" aria-label="Podcasts" title="Podcasts">Podcasts</a>
 								</li>
 								<li class="header__menu-item">
-									<a href="#" class="header__menu-link">Resources</a>
+									<a href="#" class="header__menu-link" aria-label="Resources" title="Resources">Resources</a>
 								</li>
 							</ul>
 						</nav>
-						<a class="header__contact-us-link button button--accent">Contact Us</a>
+						<a class="header__contact-us-link button button--accent" aria-label="Contact Us" title="Contact Us">Contact Us</a>
 					</div>
 
 					<button
@@ -61,7 +63,88 @@
 			</div>
 		</header>
 
-		<main></main>
+		<main>
+			<section class="hero" aria-labelledby="hero-title">
+				<div class="hero__main container">
+
+					<div class="hero__body">
+						<p class="hero__subtitle">Your Journey to Tomorrow Begins Here</p>
+						<h1 class="hero__title" id="hero-title">Explore the Frontiers of Artificial Intelligence</h1>
+						<div class="hero__description">
+							<p>Welcome to the epicenter of AI innovation. FutureTech AI News is your passport to a world where machines think, learn, and reshape the future. Join us on this visionary expedition into the heart of AI.</p>
+						</div>
+					</div>
+
+					<div class="hero__metrics metrics">
+						<dl class="metrics__list">
+							<div class="metrics__item">
+								<dt class="metrics__key">Resources available</dt>
+								<dd class="metrics__value h3">300<span class="metrics__sign">+</span></dd>
+							</div>
+							<div class="metrics__item">
+								<dt class="metrics__key">Total Downloads</dt>
+								<dd class="metrics__value h3">12k<span class="metrics__sign">+</span></dd>
+							</div>
+							<div class="metrics__item">
+								<dt class="metrics__key">Active Users</dt>
+								<dd class="metrics__value h3">10k<span class="metrics__sign">+</span></dd>
+							</div>
+						</dl>
+					</div>
+
+					<div class="hero__resources-preview resources-preview">
+						<div class="resources-preview__team team">
+							<img src="./assets/images/team/1.png" alt="" width="60"  height="60" loading="lazy" class="team__person">
+							<img src="./assets/images/team/2.png" alt="" width="60"  height="60" loading="lazy" class="team__person">
+							<img src="./assets/images/team/3.png" alt="" width="60"  height="60" loading="lazy" class="team__person">
+							<img src="./assets/images/team/4.png" alt="" width="60"  height="60" loading="lazy" class="team__person">
+						</div>
+						<div class="resources-preview__body">
+							<p class="resources-preview__title h5">Explore 1000+ resources</p>
+							<p class="resources-preview__subtitle">Over 1,000 articles on emerging tech trends and breakthroughs.</p>
+						</div>
+						<a href="#" class="resources-preview__button button" aria-label="Explore Resources" title="Explore Resources">
+							<span class="icon icon--yellow-arrow">Explore Resources</span>
+						</a>
+					</div>
+				</div>
+				<div class="hero__advantages">
+					<h2 class="visually-hidden">Our advantages</h2>
+					<ul class="hero__advantages-list container">
+						<li class="hero__advantages-item">
+							<div class="advantage-card">
+								<img src="./assets/images/icon/advantage-card/1.svg" alt="" width="50" height="50" loading="lazy" class="advantage-card__images"/>
+								<a href="/" class="advantage-card__link">
+									<h3 class="advantage-card__title h6">Latest News Updates</h3>
+									<p class="advantage-card__subtitle">Stay Current</p>
+								</a>
+								<p class="advantage-card__details">Over 1,000 articles published monthly</p>
+							</div>
+						</li>
+						<li class="hero__advantages-item">
+							<div class="advantage-card">
+								<img src="./assets/images/icon/advantage-card/2.svg" alt="" width="50" height="50" loading="lazy" class="advantage-card__images"/>
+								<a href="/" class="advantage-card__link">
+									<h3 class="advantage-card__title h6">Expert Contributors</h3>
+									<p class="advantage-card__subtitle">Trusted Insights</p>
+								</a>
+								<p class="advantage-card__details">50+ renowned AI experts on our team</p>
+							</div>
+						</li>
+						<li class="hero__advantages-item">
+							<div class="advantage-card">
+								<img src="./assets/images/icon/advantage-card/3.svg" alt="" width="50" height="50" loading="lazy" class="advantage-card__images"/>
+								<a href="/" class="advantage-card__link">
+									<h3 class="advantage-card__title h6">Global Readership</h3>
+									<p class="advantage-card__subtitle">Worldwide Impact</p>
+								</a>
+								<p class="advantage-card__details">2 million monthly readers</p>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</section>
+		</main>
 
 		<footer class="footer">
 			<div class="footer__inner container">
@@ -274,7 +357,5 @@
 				</div>
 			</div>
 		</footer>
-
-		<script type="module" src="./scripts/main.js"></script>
 	</body>
 </html>
