@@ -82,8 +82,8 @@
 	}
 
 	&__soc1als {
-		&__list {
-			flex-direction: column;
+		@include mobile {
+			order: -1;
 		}
 	}
 }

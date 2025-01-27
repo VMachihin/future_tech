@@ -9,26 +9,26 @@
 }
 
 /**
-  Убираем внутренние отступы слева тегам списков,
-  у которых есть атрибут class
- */
+   Убираем внутренние отступы слева тегам списков,
+   у которых есть атрибут class
+  */
 :where(ul, ol):where([class]) {
   padding-left: 0;
 }
 
 /**
-  Убираем внешние отступы body и двум другим тегам,
-  у которых есть атрибут class
- */
+   Убираем внешние отступы body и двум другим тегам,
+   у которых есть атрибут class
+  */
 body,
 :where(blockquote, figure):where([class]) {
   margin: 0;
 }
 
 /**
-  Убираем внешние отступы вертикали нужным тегам,
-  у которых есть атрибут class
- */
+   Убираем внешние отступы вертикали нужным тегам,
+   у которых есть атрибут class
+  */
 :where(h1,
 h2,
 h3,
@@ -53,9 +53,9 @@ dl):where([class]) {
 }
 
 /**
-  Убираем стандартный маркер маркированному списку,
-  у которого есть атрибут class
- */
+   Убираем стандартный маркер маркированному списку,
+   у которого есть атрибут class
+  */
 :where(ul[class]) {
   list-style: none;
 }
@@ -65,26 +65,26 @@ dl):where([class]) {
 }
 
 /**
-  Обнуляем вертикальные внешние отступы параграфа,
-  объявляем локальную переменную для внешнего отступа вниз,
-  чтобы избежать взаимодействие с более сложным селектором
- */
+   Обнуляем вертикальные внешние отступы параграфа,
+   объявляем локальную переменную для внешнего отступа вниз,
+   чтобы избежать взаимодействие с более сложным селектором
+  */
 p {
   --paragraphMarginBottom: 24px;
   margin-block: 0;
 }
 
 /**
-  Внешний отступ вниз для параграфа без атрибута class,
-  который расположен не последним среди своих соседних элементов
- */
+   Внешний отступ вниз для параграфа без атрибута class,
+   который расположен не последним среди своих соседних элементов
+  */
 p:where(:not([class]):not(:last-child)) {
   margin-bottom: var(--paragraphMarginBottom);
 }
 
 /**
-  Упрощаем работу с изображениями и видео
- */
+   Упрощаем работу с изображениями и видео
+  */
 img,
 video {
   display: block;
@@ -93,8 +93,8 @@ video {
 }
 
 /**
-  Наследуем свойства шрифт для полей ввода
- */
+   Наследуем свойства шрифт для полей ввода
+  */
 input,
 textarea,
 select,
@@ -104,20 +104,20 @@ button {
 
 html {
   /**
-    Пригодится в большинстве ситуаций
-    (когда, например, нужно будет "прижать" футер к низу сайта)
-   */
+     Пригодится в большинстве ситуаций
+     (когда, например, нужно будет "прижать" футер к низу сайта)
+    */
   height: 100%;
   /**
-    Убираем скачок интерфейса по горизонтали
-    при появлении / исчезновении скроллбара
-   */
+     Убираем скачок интерфейса по горизонтали
+     при появлении / исчезновении скроллбара
+    */
   scrollbar-gutter: stable;
 }
 
 /**
-  Плавный скролл
- */
+   Плавный скролл
+  */
 html,
 :has(:target) {
   scroll-behavior: smooth;
@@ -125,61 +125,70 @@ html,
 
 body {
   /**
-    Пригодится в большинстве ситуаций
-    (когда, например, нужно будет "прижать" футер к низу сайта)
-   */
+     Пригодится в большинстве ситуаций
+     (когда, например, нужно будет "прижать" футер к низу сайта)
+    */
   min-height: 100%;
   /**
-    Унифицированный интерлиньяж
-   */
+     Унифицированный интерлиньяж
+    */
   line-height: 1.5;
 }
 
 /**
-  Нормализация высоты элемента ссылки при его инспектировании в DevTools
- */
+   Нормализация высоты элемента ссылки при его инспектировании в DevTools
+  */
 a:where([class]) {
   display: inline-flex;
 }
 
 /**
-  Курсор-рука при наведении на элемент
- */
+   Курсор-рука при наведении на элемент
+  */
 button,
 label {
   cursor: pointer;
 }
 
 /**
-  Приводим к единому цвету svg-элементы
- */
-[fill] {
+   Приводим к единому цвету svg-элементы
+   (за исключением тех, у которых уже указан
+   атрибут fill со значением 'none' или начинается с 'url')
+  */
+:where([fill]:not([fill=none],
+[fill^=url])) {
   fill: currentColor;
 }
 
-[stroke] {
+/**
+   Приводим к единому цвету svg-элементы
+   (за исключением тех, у которых уже указан
+   атрибут stroke со значением 'none')
+  */
+:where([stroke]:not([stroke=none],
+[stroke^=url])) {
   stroke: currentColor;
 }
 
 /**
-  Чиним баг задержки смены цвета при взаимодействии с svg-элементами
- */
+   Чиним баг задержки смены цвета при взаимодействии с svg-элементами
+  */
 svg * {
   transition-property: fill, stroke;
 }
 
 /**
-  Приведение рамок таблиц в классический 'collapse' вид
- */
+   Приведение рамок таблиц в классический 'collapse' вид
+  */
 :where(table) {
   border-collapse: collapse;
   border-color: currentColor;
 }
 
 /**
-  Удаляем все анимации и переходы для людей,
-  которые предпочитают их не использовать
- */
+   Удаляем все анимации и переходы для людей,
+   которые предпочитают их не использовать
+  */
 @media (prefers-reduced-motion: reduce) {
   *,
   ::before,
@@ -665,7 +674,15 @@ main {
   display: flex;
 }
 .soc1als__link {
+  --size: 1.5rem;
+  width: var(--size);
+  height: var(--size);
   color: var(--color-light);
+}
+@media (width <= 90.06125rem) {
+  .soc1als__link {
+    --size: 1.25rem;
+  }
 }
 
 .footer {
@@ -741,8 +758,148 @@ main {
   content: "|";
   margin-inline: 0.6875rem;
 }
-.footer__soc1als__list {
+@media (width <= 47.99875rem) {
+  .footer__soc1als {
+    order: -1;
+  }
+}
+
+.metrics__list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.metrics__item {
+  display: flex;
+  flex-direction: column-reverse;
+  row-gap: 0.625rem;
+  padding: 3.125rem;
+}
+.metrics__item:first-child {
+  padding-left: 0;
+}
+.metrics__item:not(:last-child) {
+  border-right: var(--border);
+}
+.metrics__value {
+  font-weight: 600;
+}
+.metrics__sign {
+  color: var(--color-accent);
+}
+
+.team {
+  --personImagesSize: 3.75rem;
+  display: flex;
+  padding: 0.625rem;
+  background-color: var(--color-dark-10);
+  border-radius: 6.25rem;
+}
+.team__person {
+  width: var(--personImagesSize);
+  background-color: var(--color-dark-15);
+  border: 0.125rem solid var(--color-dark-40);
+  border-radius: 50%;
+}
+.team__person:not(:first-child) {
+  margin-left: calc(var(--personImagesSize) / 4 * -1);
+}
+
+.resources-preview {
+  display: flex;
   flex-direction: column;
+  justify-content: end;
+  align-items: start;
+  row-gap: 1.875rem;
+}
+.resources-preview__body {
+  display: grid;
+  row-gap: 0.875rem;
+}
+
+.advantage-card {
+  display: grid;
+  row-gap: 1.875rem;
+}
+.advantage-card__link {
+  --circleSize: 3.25rem;
+  --circleMarginLeft: 1.25rem;
+  position: relative;
+  display: grid;
+  row-gap: 0.25rem;
+  padding-right: calc(var(--circleSize) + var(--circleMarginLeft));
+}
+.advantage-card__link::after {
+  width: var(--circleSize);
+  height: var(--circleSize);
+  position: absolute;
+  top: 50%;
+  translate: 0 -50%;
+  content: "";
+  right: 0;
+  background: url("../../assets/images/icon/arrow-top-right_black.svg") center no-repeat var(--color-accent);
+  border-radius: 50%;
+}
+.advantage-card__details {
+  font-size: clamp(0.875rem, 0.7541322314rem + 0.4958677686vw, 1.25rem);
+  font-family: var(--font-family-accent);
+}
+
+.hero__main {
+  display: grid;
+  grid-template-columns: 60% auto;
+  grid-template-areas: "body resources-preview" "metrics resources-preview";
+}
+.hero__body {
+  grid-area: body;
+  padding-top: 9.375rem;
+  padding-right: 3.125rem;
+  padding-bottom: 6.25rem;
+}
+.hero__subtitle {
+  font-size: clamp(1.125rem, 0.8832644628rem + 0.9917355372vw, 1.875rem);
+  font-family: var(--font-family-accent);
+  font-weight: 500;
+  color: var(--color-dark-40);
+}
+.hero__subtitle:not(:last-child) {
+  margin-bottom: 1.875rem;
+}
+.hero__title:not(:last-child) {
+  margin-bottom: 1.25rem;
+}
+.hero__metrics {
+  grid-area: metrics;
+  border-top: var(--border);
+}
+.hero__resources-preview {
+  grid-area: resources-preview;
+  padding-left: 5rem;
+  padding-bottom: 5rem;
+  border-left: var(--border);
+  background: url("../../assets/images/resources-preview/bg.png") 0 0/cover no-repeat;
+}
+.hero__advantages {
+  border-block: var(--border);
+}
+.hero__advantages-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.hero__advantages-item {
+  --padding-x: 5rem;
+  padding-block: 3.125rem;
+}
+.hero__advantages-item:not(:first-child) {
+  padding-left: var(--padding-x);
+}
+.hero__advantages-item:not(:last-child) {
+  padding-right: var(--padding-x);
+  border-right: var();
+}
+
+.header,
+.footer {
+  display: none !important;
 }
 
 /*# sourceMappingURL=main.css.map */
