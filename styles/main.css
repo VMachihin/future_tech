@@ -280,8 +280,7 @@ svg * {
   border: 0 !important;
   padding: 0 !important;
   white-space: nowrap !important;
-  -webkit-clip-path: inset(100%) !important;
-          clip-path: inset(100%) !important;
+  clip-path: inset(100%) !important;
   clip: rect(0 0 0 0) !important;
   overflow: hidden !important;
 }
@@ -435,8 +434,7 @@ main {
 .icon {
   display: inline-flex;
   align-items: center;
-  -moz-column-gap: 0.625rem;
-       column-gap: 0.625rem;
+  column-gap: 0.625rem;
 }
 .icon::after {
   --size: 1.5rem;
@@ -608,13 +606,11 @@ main {
 .header__menu-list {
   display: flex;
   align-items: center;
-  -moz-column-gap: 1rem;
-       column-gap: 1rem;
+  column-gap: 1rem;
 }
 @media (width <= 90.06125rem) {
   .header__menu-list {
-    -moz-column-gap: 0.375rem;
-         column-gap: 0.375rem;
+    column-gap: 0.375rem;
   }
 }
 @media (width <= 47.99875rem) {
@@ -667,13 +663,11 @@ main {
 .soc1als__list {
   display: flex;
   align-items: center;
-  -moz-column-gap: 1.25rem;
-       column-gap: 1.25rem;
+  column-gap: 1.25rem;
 }
 @media (width <= 90.06125rem) {
   .soc1als__list {
-    -moz-column-gap: 0.875rem;
-         column-gap: 0.875rem;
+    column-gap: 0.875rem;
   }
 }
 .soc1als__item {
@@ -702,8 +696,7 @@ main {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   align-items: start;
-  -moz-column-gap: clamp(1.25rem, 0.041322314rem + 4.958677686vw, 5rem);
-       column-gap: clamp(1.25rem, 0.041322314rem + 4.958677686vw, 5rem);
+  column-gap: clamp(1.25rem, 0.041322314rem + 4.958677686vw, 5rem);
 }
 @media (width <= 63.99875rem) {
   .footer__menu {
@@ -738,15 +731,13 @@ main {
 .footer__menu-item {
   display: flex;
   align-items: center;
-  -moz-column-gap: 0.5rem;
-       column-gap: 0.5rem;
+  column-gap: 0.5rem;
 }
 .footer__extra {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  -moz-column-gap: 0.0625rem;
-       column-gap: 0.0625rem;
+  column-gap: 0.0625rem;
   padding-block: 2.5rem;
 }
 @media (width <= 90.06125rem) {
@@ -816,9 +807,6 @@ main {
 .resources-preview {
   display: flex;
   flex-direction: column;
-<<<<<<< HEAD
-}/*# sourceMappingURL=main.css.map */
-=======
   justify-content: end;
   align-items: start;
   row-gap: 1.875rem;
@@ -915,4 +903,3 @@ main {
 }
 
 /*# sourceMappingURL=main.css.map */
->>>>>>> 98fa43ac65fad36d29026ee767a6a2ccf94cda70
